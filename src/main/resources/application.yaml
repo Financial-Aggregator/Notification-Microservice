@@ -1,11 +1,13 @@
 spring:
   application:
     name: notification-service
+server:
+  port: 2020
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
 
 logging:
   level:
@@ -17,6 +19,3 @@ management:
     web:
       exposure:
         include: health
-
-server:
-  port: 2020
