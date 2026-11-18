@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: notification-microservice
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    ports:
+      - "2020:2020"
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
+    external: true
+
